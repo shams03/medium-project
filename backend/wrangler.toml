@@ -1,0 +1,42 @@
+name = "backend"
+main = "src/index.ts"
+compatibility_date = "2024-11-23"
+account_id = "72ab2f5602136adeb425810ce4120566"
+workers_dev = true # Deploys to your workers.dev subdomain
+
+
+
+[vars]
+DATABASE_URL ="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiZTljZDM0ZjYtY2I0My00YjNhLWFiYzAtYjZhY2M4YzJiMTQxIiwidGVuYW50X2lkIjoiNzUzZDg0NDk2NjA0YWZiYjhkZDU5NWMyNGI5M2EyNzdkZGQ5MzZmM2VlNGVkMDVkZTljNzExZmFhMDY3ODU3NCIsImludGVybmFsX3NlY3JldCI6IjhjNWI3MjhlLTZlYmYtNDJlNC05YjliLWM0NjM2ZDQxZjI0NCJ9.157x4PJZEAr7D0W89fCMmyFtWWigFdobpQwW7n1wyLM"
+
+JWTSECRET= "boobiesAreLove"
+SALT=10
+compatibility_flags = [ "nodejs_compat" ]
+compatibility_date = "2024-09-23"
+
+# compatibility_flags = [ "nodejs_compat" ]
+
+# [vars]
+# MY_VAR = "my-variable"
+
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "my-database"
+# database_id = ""
+
+# [ai]
+# binding = "AI"
+
+# [observability]
+# enabled = true
+# head_sampling_rate = 1
+

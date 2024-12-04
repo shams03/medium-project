@@ -1,0 +1,24 @@
+routes needed? 
+ sign up
+ sign in
+ home
+ trending
+ /blog/id
+ profile
+
+ 
+ pagination
+ token in cookies
+
+ {
+  "id": "dcbf57d3-d990-4526-bebc-61bda4d245ff"
+  "title":"new 3 PUT ",
+  "content":"new 3"
+ 
+}
+{
+  "email":"4@gmail.com",
+  "password":"123456789"
+}
+ "id": "5d9245dd-85d8-4005-8984-4e0a70a65d90"
+  "authorId": "d1e2e16e-6732-435e-a580-2e7e12acba7a"
