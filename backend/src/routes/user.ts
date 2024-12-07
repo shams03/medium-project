@@ -3,7 +3,10 @@ import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { decode, sign, verify } from "hono/jwt";
 import bcrypt from "bcryptjs";
-import { signupInput, signinInput } from "@shamsii/medium-project-common/dist/zod";
+import {
+  signupInput,
+  signinInput,
+} from "@shamsii/medium-project-common/dist/zod";
 
 const userApp = new Hono<{
   Bindings: {
@@ -19,7 +22,7 @@ userApp.post("/signin", async (c) => {
   }).$extends(withAccelerate());
 
   const body = await c.req.json();
-  
+
   const { success } = signinInput.safeParse(body);
   if (!success) {
     c.status(411);
@@ -57,7 +60,7 @@ userApp.post("/signin", async (c) => {
     const isPassValid = await bcrypt.compare(body.password, user.password);
     if (!isPassValid) {
       c.status(400);
-      return c.text("Invalid Password");
+      return c.json({ message: "Invalid Password" });
     }
 
     const payload = {
@@ -68,7 +71,7 @@ userApp.post("/signin", async (c) => {
     //token in cookie remaining
     return c.json({
       token: token,
-      msg: "logged in successfully",
+      message: "logged in successfully",
     });
   }
 });
@@ -120,7 +123,7 @@ userApp.post("/signup", async (c) => {
   });
 
   return c.json({
-    msg: "account created successfully",
+    message: "account created successfully",
   });
 });
 
